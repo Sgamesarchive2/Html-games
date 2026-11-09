@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GN-Math</title>
+    <!-- Base reference pointing to the active CDN repo deployment -->
+    <base href="https://cdn.jsdelivr.net/gh/gn-math/gn-math.github.io@main/">
+    <link rel="icon" type="image/png" href="https://codehs.com/uploads/84799a0bb8e09668879b73acd5e7abaa">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Injection Script to pull down the unblocked portal framework directly -->
+    <script>
+        window.addEventListener('beforeunload', function (e) {
+            e.preventDefault();
+            e.returnValue = 'Unsaved changes warning';
+        });
+
+        launch();
+
+        function launch() {
+            try {
+                fetch("https://cdn.jsdelivr.net/gh/gn-math/gn-math-DONTDMCA@main/singlefile.html?t=" + Date.now())
+                    .then(response => response.text())
+                    .then(html => {
+                        document.documentElement.innerHTML = html;
+                    });
+            } catch (err) {
+                console.error("Failed to fetch launcher resource:", err);
+            }
+        }
+    </script>
+</body>
+</html>
